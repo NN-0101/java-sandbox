@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sandbox.services</groupId>
+        <artifactId>sandbox-common</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>sandbox-common-base</artifactId>
+    <version>1.0.0</version>
+    <name>sandbox-common-base</name>
+    <description>sandbox-common-base</description>
+
+    <dependencies>
+        <!-- Spring Boot Starter Begin-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Spring Boot Starter End-->
+
+        <!-- Spring Cloud Begin-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- Spring Cloud End-->
+
+        <!--Aop Begin-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+        <!--Aop Begin-->
+
+        <!--TLog Begin-->
+        <dependency>
+            <groupId>com.yomahub</groupId>
+            <artifactId>tlog-all-spring-boot-starter</artifactId>
+        </dependency>
+        <!--TLog End-->
+
+        <!-- validation 参数校验 Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+        </dependency>
+        <!-- validation 参数校验 End -->
+    </dependencies>
+</project>
