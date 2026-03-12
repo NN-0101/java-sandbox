@@ -1,4 +1,4 @@
-package com.sandbox.services.netty.websocket;
+package com.sandbox.services.device.websocket.server;
 
 import com.zozo.netty.handler.ConnHandler;
 import com.zozo.netty.handler.DefaultHandler;
@@ -24,12 +24,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class WebSocketChannelInitializer extends ChannelInitializer<SocketChannel> {
 
-    private final RedisTemplate<String, Object> redisTemplate;
-
     private final String serverInstanceId;
 
-    public WebSocketChannelInitializer(RedisTemplate<String, Object> redisTemplate, String serverInstanceId) {
-        this.redisTemplate = redisTemplate;
+    public WebSocketChannelInitializer(String serverInstanceId) {
         this.serverInstanceId = serverInstanceId;
     }
 

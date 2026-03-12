@@ -12,7 +12,7 @@
 
     <modules>
         <module>sandbox-common</module>
-        <module>sandbox-netty</module>
+        <module>sandbox-device-websocket</module>
     </modules>
 
     <parent>

@@ -1,6 +1,6 @@
-package com.sandbox.services.netty.handler;
+package com.sandbox.services.device.websocket.handler;
 
-import com.sandbox.services.netty.domain.NettyMessageBO;
+import com.sandbox.services.device.websocket.domain.MessageBO;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -9,7 +9,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @author: xp
  * @create: 2025/5/1
  */
-public abstract class BaseBusinessHandler extends SimpleChannelInboundHandler<NettyMessageBO> {
+public abstract class BaseBusinessHandler extends SimpleChannelInboundHandler<MessageBO> {
 
     /**
      * 所有子类只需实现process方法
@@ -17,7 +17,7 @@ public abstract class BaseBusinessHandler extends SimpleChannelInboundHandler<Ne
      * @param ctx ChannelHandlerContext
      * @param msg NettyMeg
      */
-    protected abstract void process(ChannelHandlerContext ctx, NettyMessageBO msg);
+    protected abstract void process(ChannelHandlerContext ctx, MessageBO msg);
 
     /**
      * 由子类返回它处理的类型
@@ -27,7 +27,7 @@ public abstract class BaseBusinessHandler extends SimpleChannelInboundHandler<Ne
     public abstract int getHandlerType();
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, NettyMessageBO msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, MessageBO msg) throws Exception {
         if (msg.getType() == getHandlerType()) {
             process(ctx, msg);
         } else {

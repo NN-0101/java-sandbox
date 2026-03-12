@@ -1,4 +1,4 @@
-package com.sandbox.services.netty.websocket;
+package com.sandbox.services.device.websocket.server;
 
 import com.alibaba.cloud.nacos.NacosDiscoveryProperties;
 import com.alibaba.nacos.api.NacosFactory;
@@ -37,9 +37,6 @@ public class NettyWebSocketServer {
     @Autowired
     private NacosDiscoveryProperties nacosDiscoveryProperties;
 
-    @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
-
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
 
@@ -55,10 +52,9 @@ public class NettyWebSocketServer {
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new WebSocketChannelInitializer(redisTemplate, getCurrentServerId()));
+                .childHandler(new WebSocketChannelInitializer(getCurrentServerId()));
 
         bootstrap.bind(port).sync().channel();
-        registerToNacos();
         log.info("Netty WebSocket Server started on port: {}", port);
     }
 
@@ -72,43 +68,43 @@ public class NettyWebSocketServer {
         }
     }
 
-    /**
-     * Netty服务注册到nacos
-     *
-     * @throws NacosException 异常
-     */
-    private void registerToNacos() throws NacosException {
-
-        // 1. 获取 Nacos 命名服务实例
-        Properties properties = new Properties();
-        properties.setProperty("serverAddr", nacosDiscoveryProperties.getServerAddr());
-        properties.setProperty("namespace", nacosDiscoveryProperties.getNamespace());
-        properties.setProperty("username", nacosDiscoveryProperties.getUsername());
-        properties.setProperty("password", nacosDiscoveryProperties.getPassword());
-
-        NamingService namingService = NacosFactory.createNamingService(properties);
-
-        Instance instance = new Instance();
-        // 显式设置实例 ID
-        instance.setInstanceId(getCurrentServerId());
-        instance.setIp(nacosDiscoveryProperties.getIp());
-        instance.setPort(port);
-        instance.setServiceName(serverName);
-        instance.setClusterName(nacosDiscoveryProperties.getClusterName());
-        instance.setMetadata(nacosDiscoveryProperties.getMetadata());
-
-        // 3. 注册实例到 Nacos
-        namingService.registerInstance(serverName, nacosDiscoveryProperties.getGroup(), instance);
-    }
-
-    /**
-     * 获取当前服务器的实例 ID（从 Nacos 元数据）
-     *
-     * @return 实例 ID
-     */
-    public String getCurrentServerId() {
-        Map<String, String> metadata = nacosDiscoveryProperties.getMetadata();
-        // 对应配置文件中的 metadata.instance-id
-        return metadata.get("instance-id");
-    }
+//    /**
+//     * Netty服务注册到nacos
+//     *
+//     * @throws NacosException 异常
+//     */
+//    private void registerToNacos() throws NacosException {
+//
+//        // 1. 获取 Nacos 命名服务实例
+//        Properties properties = new Properties();
+//        properties.setProperty("serverAddr", nacosDiscoveryProperties.getServerAddr());
+//        properties.setProperty("namespace", nacosDiscoveryProperties.getNamespace());
+//        properties.setProperty("username", nacosDiscoveryProperties.getUsername());
+//        properties.setProperty("password", nacosDiscoveryProperties.getPassword());
+//
+//        NamingService namingService = NacosFactory.createNamingService(properties);
+//
+//        Instance instance = new Instance();
+//        // 显式设置实例 ID
+//        instance.setInstanceId(getCurrentServerId());
+//        instance.setIp(nacosDiscoveryProperties.getIp());
+//        instance.setPort(port);
+//        instance.setServiceName(serverName);
+//        instance.setClusterName(nacosDiscoveryProperties.getClusterName());
+//        instance.setMetadata(nacosDiscoveryProperties.getMetadata());
+//
+//        // 3. 注册实例到 Nacos
+//        namingService.registerInstance(serverName, nacosDiscoveryProperties.getGroup(), instance);
+//    }
+//
+//    /**
+//     * 获取当前服务器的实例 ID（从 Nacos 元数据）
+//     *
+//     * @return 实例 ID
+//     */
+//    public String getCurrentServerId() {
+//        Map<String, String> metadata = nacosDiscoveryProperties.getMetadata();
+//        // 对应配置文件中的 metadata.instance-id
+//        return metadata.get("instance-id");
+//    }
 }

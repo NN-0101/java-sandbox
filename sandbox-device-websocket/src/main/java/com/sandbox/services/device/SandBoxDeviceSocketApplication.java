@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2026/3/12
  */
 @SpringBootApplication(scanBasePackages = {"com.sandbox.services"})
-public class SandBoxNettyApplication {
+public class SandBoxDeviceSocketApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SandBoxNettyApplication.class, args);
+        SpringApplication.run(com.sandbox.services.netty.SandBoxDeviceSocketApplication.class, args);
     }
 }

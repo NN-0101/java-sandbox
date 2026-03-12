@@ -1,4 +1,4 @@
-package com.sandbox.services.netty.handler;
+package com.sandbox.services.device.websocket.handler;
 
 import com.zozo.netty.domain.NettyMessageBO;
 import io.netty.channel.ChannelHandlerContext;

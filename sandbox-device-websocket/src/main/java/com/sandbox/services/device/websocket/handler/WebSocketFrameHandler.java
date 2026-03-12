@@ -1,4 +1,4 @@
-package com.sandbox.services.netty.handler;
+package com.sandbox.services.device.websocket.handler;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.zozo.netty.channel.ChannelGroup;
