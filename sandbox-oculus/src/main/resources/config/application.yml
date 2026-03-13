@@ -1,0 +1,15 @@
+server:
+  port: 1010
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+    context-path: /sandbox-oculus
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: sandbox-oculus
+

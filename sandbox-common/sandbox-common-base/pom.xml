@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.sandbox.services</groupId>
         <artifactId>sandbox-common</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>sandbox-common-base</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
     <name>sandbox-common-base</name>
     <description>sandbox-common-base</description>
 

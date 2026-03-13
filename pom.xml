@@ -7,12 +7,12 @@
     <groupId>com.sandbox.services</groupId>
     <artifactId>sandbox-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
-    <name>sandbox</name>
+    <version>${revision}</version>
+    <name>SANDBOX</name>
 
     <modules>
         <module>sandbox-common</module>
-        <module>sandbox-device-websocket</module>
+        <module>sandbox-oculus</module>
     </modules>
 
     <parent>
@@ -22,6 +22,10 @@
     </parent>
 
     <properties>
+        <!-- 版本配置 Begin -->
+        <revision>1.0.0</revision>
+        <!-- 版本配置 Begin -->
+
         <!-- 基础环境配置 Begin -->
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,0 +1,79 @@
+# Sharding 数据源配置
+sharding:
+  ds0:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: "0101"
+    password: Nanian0101*
+
+  ds1:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: "0101"
+    password: Nanian0101*
+
+  ds0slave0:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: "0101"
+    password: Nanian0101*
+
+  ds1slave0:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: "0101"
+    password: Nanian0101*
+
+  basic:
+    # 基础连接池配置
+    max-active: 20
+    min-idle: 5
+    initial-size: 1                    # 降低初始连接数，加快启动
+
+    # 连接等待配置
+    max-wait: 10000
+
+    # 连接泄漏检测 - 生产环境关闭
+    remove-abandoned: false             # 关键：关闭removeAbandoned
+    remove-abandoned-timeout: 1800
+    log-abandoned: false
+
+    # 空闲连接检查
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+
+    # 连接测试配置 - 优化启动速度
+    validation-query: SELECT 1
+    test-while-idle: true
+    test-on-borrow: false                # 关闭borrow时测试
+    test-on-return: false                # 关闭return时测试
+
+#数局库字段加密 配置
+aes:
+  key: 771EDC69C12DD144086F0AD00500BECE
+#  tables:
+#    t_user:
+#      - real_name
+#      - phone
+#      - email
+#      - id_number
+
+# Mybatis-Plus 配置
+mybatis-plus:
+  datacenter-id: 0
+  mapper-locations: classpath*:mapper/**/*.xml  # Mapper XML 文件位置
+  global-config:
+    db-config:
+      id-type: assign_id  # 主键ID策略
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        web: DEBUG
+

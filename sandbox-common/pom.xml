@@ -5,16 +5,16 @@
     <parent>
         <groupId>com.sandbox.services</groupId>
         <artifactId>sandbox-parent</artifactId>
-        <version>1.0.0</version>
+        <version>${revision}</version>
     </parent>
 
     <modules>
         <module>sandbox-common-base</module>
-<!--        <module>sandbox-common-db</module>-->
+        <module>sandbox-common-db-mysql</module>
     </modules>
 
     <artifactId>sandbox-common</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
     <name>sandbox-common</name>
     <description>sandbox-common</description>
     <packaging>pom</packaging>
