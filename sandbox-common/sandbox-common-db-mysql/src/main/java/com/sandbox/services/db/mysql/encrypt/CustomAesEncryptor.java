@@ -20,4 +20,23 @@ import java.util.Properties;
  */
 public class CustomAesEncryptor implements EncryptAlgorithm {
 
+    @Override
+    public String encrypt(Object o) {
+        return "";
+    }
+
+    @Override
+    public Object decrypt(String s) {
+        return null;
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public String getType() {
+        return "";
+    }
 }
