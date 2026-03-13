@@ -54,7 +54,7 @@ sharding:
 
 #数局库字段加密 配置
 aes:
-  key: 771EDC69C12DD144086F0AD00500BECE
+  key: 7F2A8C3B9D4E5F1A6B2C3D4E5F6A7B8C
 #  tables:
 #    t_user:
 #      - real_name
