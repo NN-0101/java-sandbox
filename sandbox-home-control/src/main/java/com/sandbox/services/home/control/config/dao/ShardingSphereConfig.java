@@ -1,4 +1,4 @@
-package com.sandbox.services.oculus.config.dao;
+package com.sandbox.services.home.control.config.dao;
 
 import com.google.common.collect.Lists;
 import com.sandbox.services.db.mysql.config.DataSourceConfig;

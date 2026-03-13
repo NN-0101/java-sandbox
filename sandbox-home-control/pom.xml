@@ -8,10 +8,10 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>sandbox-oculus</artifactId>
+    <artifactId>sandbox-home-control</artifactId>
     <version>${revision}</version>
-    <name>sandbox-oculus</name>
-    <description>sandbox-oculus</description>
+    <name>sandbox-home-control</name>
+    <description>sandbox-home-control</description>
 
     <dependencies>
         <!--Base Service Begin-->

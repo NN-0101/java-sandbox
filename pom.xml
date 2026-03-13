@@ -12,7 +12,7 @@
 
     <modules>
         <module>sandbox-common</module>
-        <module>sandbox-oculus</module>
+        <module>sandbox-home-control</module>
     </modules>
 
     <parent>

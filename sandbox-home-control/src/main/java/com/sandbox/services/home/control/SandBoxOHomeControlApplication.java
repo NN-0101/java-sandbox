@@ -1,4 +1,4 @@
-package com.sandbox.services.oculus;
+package com.sandbox.services.home.control;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2026/3/13
  */
 @SpringBootApplication(scanBasePackages = {"com.sandbox.services.**"})
-public class SandBoxOculusApplication {
+public class SandBoxOHomeControlApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SandBoxOculusApplication.class, args);
+        SpringApplication.run(SandBoxOHomeControlApplication.class, args);
     }
 }
