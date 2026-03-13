@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sandbox.services.living.mapper.UserMapper">
+
+    <resultMap type="com.sandbox.services.living.model.UserDO" id="UserMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="INTEGER"/>
+        <result property="idNumber" column="id_number" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="headImg" column="head_img" jdbcType="VARCHAR"/>
+        <result property="sign" column="sign" jdbcType="VARCHAR"/>
+        <result property="delFlag" column="del_flag" jdbcType="INTEGER"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+`id`, `nick_name`, `real_name`, `phone`, `gender`, `id_number`, `email`, `head_img`, `sign`, `del_flag`, `create_date`, `update_date`        
+    </sql>
+    
+    <sql id="Insert_Base_Column_List">
+`id`, `nick_name`, `real_name`, `phone`, `gender`, `id_number`, `email`, `head_img`, `sign`
+        
+    </sql>
+    
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO
+            t_user
+        (<include refid="Insert_Base_Column_List"/>)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id}, #{entity.nickName}, #{entity.realName}, #{entity.phone}, #{entity.gender}, #{entity.idNumber}, #{entity.email}, #{entity.headImg}, #{entity.sign})
+        </foreach>
+    </insert>
+</mapper>
+
