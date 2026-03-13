@@ -1,4 +1,4 @@
-package com.sandbox.services.home.control.config.dao;
+package com.sandbox.services.living.config.dao;
 
 import com.sandbox.services.db.mysql.config.TableEncryptConfig;
 import org.apache.shardingsphere.encrypt.api.config.EncryptRuleConfiguration;

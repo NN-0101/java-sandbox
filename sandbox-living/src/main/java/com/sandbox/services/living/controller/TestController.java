@@ -1,4 +1,4 @@
-package com.sandbox.services.home.control.controller;
+package com.sandbox.services.living.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

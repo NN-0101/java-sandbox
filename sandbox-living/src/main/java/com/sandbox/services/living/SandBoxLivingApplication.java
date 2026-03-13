@@ -1,4 +1,4 @@
-package com.sandbox.services.home.control;
+package com.sandbox.services.living;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2026/3/13
  */
 @SpringBootApplication(scanBasePackages = {"com.sandbox.services.**"})
-public class SandBoxOHomeControlApplication {
+public class SandBoxLivingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SandBoxOHomeControlApplication.class, args);
+        SpringApplication.run(SandBoxLivingApplication.class, args);
     }
 }
