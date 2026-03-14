@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
-import com.sandbox.services.living.model.UserDO;
+import com.sandbox.services.living.model.entity.UserDO;
 
 /**
  * @description: 用户表(User)表数据库访问层

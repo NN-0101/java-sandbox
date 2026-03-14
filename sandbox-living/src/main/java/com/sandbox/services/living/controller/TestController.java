@@ -1,5 +1,7 @@
 package com.sandbox.services.living.controller;
 
+import com.sandbox.services.common.base.vo.R;
+import com.sandbox.services.living.utils.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-    @GetMapping("")
-    public String test(){
-        return "test";
+    @GetMapping("a")
+    public R<?> test(){
+        return R.success(SecurityUtils.getCurrentUser());
     }
 }

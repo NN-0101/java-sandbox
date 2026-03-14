@@ -42,7 +42,7 @@ import java.util.Properties;
 @Configuration
 @EnableConfigurationProperties({DataSourceConfig.class})
 @EnableTransactionManagement(proxyTargetClass = true)
-@MapperScan(basePackages = {"com.baomidou.mybatisplus.core.mapper", "com.sandbox.services.oculus.mapper"},
+@MapperScan(basePackages = {"com.baomidou.mybatisplus.core.mapper", "com.sandbox.services.living.mapper"},
         sqlSessionTemplateRef = "sqlSessionTemplate")
 public class ShardingSphereConfig {
 

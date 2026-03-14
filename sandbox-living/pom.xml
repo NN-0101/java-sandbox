@@ -48,6 +48,13 @@
         </dependency>
         <!-- jackson-datatype End-->
 
+        <!-- Spring Security Begin -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- Spring Security End -->
+
     </dependencies>
 
     <build>

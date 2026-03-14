@@ -1,4 +1,4 @@
-package com.sandbox.services.living.model;
+package com.sandbox.services.living.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serial;
 /**
  * @description: 用户表(User)表数据库实体
  * @author: 0101
- * @create: 2026-03-13 22:10:36
+ * @create: 2026-03-14 20:01:44
  */
 @Data
 @TableName("t_user")
@@ -32,6 +32,11 @@ public class UserDO extends BaseModel<UserDO> {
      * 手机号
      */
     private String phone;
+     
+    /**
+     * 密码
+     */
+    private String password;
      
     /**
      * 性别 1：男 2：女

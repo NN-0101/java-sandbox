@@ -5,11 +5,11 @@ server:
       charset: UTF-8
       force: true
       enabled: true
-    context-path: /sandbox-oculus
+    context-path: /sandbox-living
 
 spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: sandbox-oculus
+    name: sandbox-living
 
