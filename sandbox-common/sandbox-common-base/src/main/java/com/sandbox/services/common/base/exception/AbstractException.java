@@ -25,19 +25,19 @@ public class AbstractException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 803863908956713716L;
 
-    private final String code;
+    private final int code;
 
-    protected AbstractException(String code, String message) {
+    protected AbstractException(int code, String message) {
         super(message);
         this.code = code;
     }
 
-    protected AbstractException(String code, Throwable cause) {
+    protected AbstractException(int code, Throwable cause) {
         super(cause);
         this.code = code;
     }
 
-    protected AbstractException(String code, String message, Throwable cause) {
+    protected AbstractException(int code, String message, Throwable cause) {
         super(message, cause);
         this.code = code;
     }

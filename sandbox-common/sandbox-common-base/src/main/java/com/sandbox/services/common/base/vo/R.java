@@ -14,7 +14,7 @@ import lombok.Setter;
 @Setter
 public class R<T> {
 
-    private String code;
+    private int code;
 
     private String msg;
 
@@ -27,11 +27,11 @@ public class R<T> {
     }
 
     public R(ResponseCodeEnum responseCodeEnum) {
-        this.setCode(responseCodeEnum.getValue());
+        this.setCode(responseCodeEnum.getCode());
         this.setMsg(responseCodeEnum.getDescription());
     }
 
-    public R(String code, String message){
+    public R(int code, String message){
         this.setCode(code);
         this.setMsg(message);
     }
@@ -46,11 +46,6 @@ public class R<T> {
         return new R(ResponseCodeEnum.SUCCESS);
     }
 
-    public static <T> R<T> fail(ResponseCodeEnum responseCode, String msg) {
-        R<T> r = new R<>(responseCode);
-        r.setMsg(msg);
-        return r;
-    }
 
     public static <T> R<T> fail(ResponseCodeEnum responseCode, T data) {
         R<T> r = new R<>(responseCode);
@@ -58,23 +53,11 @@ public class R<T> {
         return r;
     }
 
-    public static <T> R<T> fail(String code, String msg, T data) {
+    public static <T> R<T> fail(int code, String msg, T data) {
         R<T> r = new R<>();
         r.setCode(code);
         r.setMsg(msg);
         r.setData(data);
         return r;
     }
-
-    public static <T> R<T> fail(String code, String msg, String eid) {
-        R<T> r = new R<>();
-        r.setCode(code);
-        r.setMsg(msg);
-        return r;
-    }
-
-    public Boolean equalsSuccess() {
-        return ResponseCodeEnum.SUCCESS.getValue().equals(this.code);
-    }
-
 }

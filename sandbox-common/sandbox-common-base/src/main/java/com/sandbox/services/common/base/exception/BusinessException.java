@@ -4,7 +4,7 @@ package com.sandbox.services.common.base.exception;
 import com.sandbox.services.common.base.enumeration.ResponseCodeEnum;
 
 /**
- * @description: * 业务异常 - 表示业务逻辑处理过程中的异常
+ * @description: 业务异常 - 表示业务逻辑处理过程中的异常
  * *
  * * 使用场景：
  * * - 参数校验失败
@@ -23,22 +23,22 @@ import com.sandbox.services.common.base.enumeration.ResponseCodeEnum;
 public class BusinessException extends AbstractException {
 
     public BusinessException(ResponseCodeEnum responseCodeEnum) {
-        super(responseCodeEnum.getValue(), responseCodeEnum.getDescription());
+        super(responseCodeEnum.getCode(), responseCodeEnum.getDescription());
     }
 
     public BusinessException(ResponseCodeEnum responseCodeEnum, Throwable cause) {
-        super(responseCodeEnum.getValue(), responseCodeEnum.getDescription(), cause);
+        super(responseCodeEnum.getCode(), responseCodeEnum.getDescription(), cause);
     }
 
-    protected BusinessException(String code, String message) {
+    protected BusinessException(int code, String message) {
         super(code, message);
     }
 
-    protected BusinessException(String code, Throwable cause) {
+    protected BusinessException(int code, Throwable cause) {
         super(code, cause);
     }
 
-    protected BusinessException(String code, String message, Throwable cause) {
+    protected BusinessException(int code, String message, Throwable cause) {
         super(code, message, cause);
     }
 }

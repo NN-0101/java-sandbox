@@ -3,6 +3,7 @@ package com.sandbox.services.living.controller;
 import com.sandbox.services.common.base.vo.R;
 import com.sandbox.services.living.utils.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("a")
+    @PreAuthorize("hasAuthority('test:view')")
     public R<?> test(){
         return R.success(SecurityUtils.getCurrentUser());
     }
