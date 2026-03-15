@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "6b6e83c5-485b-445f-96d1-a07374afb370",
+		"name": "sandbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sandbox-living",
+			"item": [
+				{
+					"name": "认证",
+					"item": [
+						{
+							"name": "密码登录",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"1\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{sandbox_living_dev}}/api/auth/login",
+									"host": [
+										"{{sandbox_living_dev}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "验证码登录",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account\":\"18607205429\",\r\n    \"captcha\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{sandbox_living_dev}}/api/auth/captcha/login",
+									"host": [
+										"{{sandbox_living_dev}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"captcha",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "测试",
+					"item": [
+						{
+							"name": "测试",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer b6028398ee3a40209f58d253ca4b2a54",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{sandbox_living_dev}}/test/a",
+									"host": [
+										"{{sandbox_living_dev}}"
+									],
+									"path": [
+										"test",
+										"a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.globals.set(\"sandbox_living_dev\", \"http://localhost:1010/sandbox-living\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
