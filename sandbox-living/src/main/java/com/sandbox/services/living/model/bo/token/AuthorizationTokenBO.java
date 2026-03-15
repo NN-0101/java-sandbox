@@ -1,10 +1,8 @@
-package com.sandbox.services.living.security.token;
+package com.sandbox.services.living.model.bo.token;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 /**
  * 自定义令牌实体
@@ -37,41 +35,30 @@ import java.util.Date;
  * </ul>
  *
  * @author 0101
- * @see com.sandbox.services.living.security.manager.TokenManager
  * @since 2026-03-14
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomToken {
+public class AuthorizationTokenBO {
 
     /**
-     * 令牌值
+     * accessToken
      */
-    private String tokenValue;
+    private String accessToken;
 
     /**
-     * 用户ID
+     * accessToken值
      */
-    private String userId;
+    private AccessTokenValueBO accessTokenValue;
 
     /**
-     * 用户名
+     * refreshToken
      */
-    private String username;
+    private String refreshToken;
 
     /**
-     * 创建时间
+     * refreshToken值
      */
-    private Date createTime;
-
-    /**
-     * 过期时间
-     */
-    private Date expireTime;
-
-    /**
-     * 是否有效
-     */
-    private Boolean isValid;
+    private RefreshTokenValueBO refreshTokenValue;
 }

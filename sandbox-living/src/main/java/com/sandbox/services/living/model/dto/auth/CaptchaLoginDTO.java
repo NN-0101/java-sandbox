@@ -1,4 +1,4 @@
-package com.sandbox.services.living.model.dto;
+package com.sandbox.services.living.model.dto.auth;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ public class CaptchaLoginDTO {
     /**
      * 手机号或邮箱
      */
-    private String account;
+    private String phone;
 
     /**
      * 验证码

@@ -59,7 +59,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return CustomUserDetails.builder()
                 .userId("438929034284234224")
                 .phone("18607205429")
-                .password("$2a$10$gmiKfHXCRmpf.bop7MT9w.SSWsioJ1gHiDuQZbDto2dbVPll6t/42") // 加密后的密码
+                .password("$2a$10$KeT6xJQD2GL5S8Kdh2eNo.GxhCgxppgcGgLU3Mof.t2xsCwA8QmYG") // 加密后的密码
                 .enabled(true)
                 .accountNonExpired(true)
                 .accountNonLocked(true)

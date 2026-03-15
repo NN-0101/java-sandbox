@@ -1,8 +1,8 @@
 package com.sandbox.services.living.security.filter;
 
-import com.sandbox.services.living.security.manager.TokenManager;
-import com.sandbox.services.living.security.token.CustomToken;
+import com.sandbox.services.living.model.bo.token.AuthorizationTokenBO;
 import com.sandbox.services.living.security.user.CustomUserDetails;
+import com.sandbox.services.living.service.AuthorizationTokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,7 +16,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.io.IOException;
 
@@ -40,9 +39,7 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
     private static final String TOKEN_HEADER = "Authorization";
     private static final String TOKEN_PREFIX = "Bearer ";
 
-    private final TokenManager tokenManager;
-
-    private final RequestMappingHandlerMapping handlerMapping;
+    private final AuthorizationTokenService authorizationTokenService;
 
     /**
      * 核心过滤方法
@@ -65,14 +62,14 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
             String tokenValue = header.substring(TOKEN_PREFIX.length());
 
             // 验证令牌
-            CustomToken token = tokenManager.validateToken(tokenValue);
+            AuthorizationTokenBO token = authorizationTokenService.validateToken(tokenValue);
 
             if (token != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 // ========== 构建UserDetails对象 ==========
                 // 将令牌中的用户信息映射到Spring Security的UserDetails接口
                 CustomUserDetails userDetails = CustomUserDetails.builder()
-                        .userId(token.getUserId())
-                        .phone(token.getUsername())
+                        .userId(token.getAccessTokenValue().getUserId())
+                        .phone(token.getAccessTokenValue().getPhone())
                         .enabled(true)
                         .accountNonExpired(true)
                         .accountNonLocked(true)

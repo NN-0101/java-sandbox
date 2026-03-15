@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sandbox.services.living.mapper.AuthorizationTokenMapper">
+
+    <resultMap type="com.sandbox.services.living.entity.AuthorizationTokenDO" id="AuthorizationTokenMap">
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="accessToken" column="access_token" jdbcType="VARCHAR"/>
+        <result property="accessTokenValue" column="access_token_value" jdbcType="VARCHAR"/>
+        <result property="refreshToken" column="refresh_token" jdbcType="VARCHAR"/>
+        <result property="refreshTokenValue" column="refresh_token_value" jdbcType="VARCHAR"/>
+        <result property="delFlag" column="del_flag" jdbcType="INTEGER"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+`id`, `access_token`, `access_token_value`, `refresh_token`, `refresh_token_value`, `del_flag`, `create_date`, `update_date`    </sql>
+    
+    <sql id="Insert_Base_Column_List">
+`id`, `access_token`, `access_token_value`, `refresh_token`, `refresh_token_value`
+    </sql>
+    
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO
+            t_authorization_token
+        (<include refid="Insert_Base_Column_List"/>)
+        VALUES
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.id}, #{entity.accessToken}, #{entity.accessTokenValue}, #{entity.refreshToken}, #{entity.refreshTokenValue})
+        </foreach>
+    </insert>
+</mapper>
+

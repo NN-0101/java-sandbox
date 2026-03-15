@@ -1,7 +1,7 @@
 package com.sandbox.services.living.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.sandbox.services.living.model.entity.UserDO;
+import com.sandbox.services.living.entity.UserDO;
 
 /**
  * @description: 用户表(User)表服务接口

@@ -2,7 +2,7 @@ package com.sandbox.services.living.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sandbox.services.living.mapper.custom.UserRepository;
-import com.sandbox.services.living.model.entity.UserDO;
+import com.sandbox.services.living.entity.UserDO;
 import com.sandbox.services.living.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

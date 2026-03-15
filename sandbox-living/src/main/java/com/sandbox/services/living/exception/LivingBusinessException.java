@@ -19,7 +19,7 @@ public class LivingBusinessException extends AbstractException {
         super(responseCodeEnum.getCode(), responseCodeEnum.getDescription(), cause);
     }
 
-    protected LivingBusinessException(int code, String message) {
+    public LivingBusinessException(int code, String message) {
         super(code, message);
     }
 

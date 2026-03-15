@@ -3,28 +3,28 @@ sharding:
   ds0:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/sandbox_living?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
     username: "0101"
     password: Nanian0101*
 
   ds1:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/sandbox_living?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
     username: "0101"
     password: Nanian0101*
 
   ds0slave0:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/sandbox_living?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
     username: "0101"
     password: Nanian0101*
 
   ds1slave0:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://117.72.60.74:3306/zozo_0101?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
+    jdbcUrl: jdbc:mysql://117.72.60.74:3306/sandbox_living?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true&rewriteBatchedStatements=true
     username: "0101"
     password: Nanian0101*
 

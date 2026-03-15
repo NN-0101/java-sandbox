@@ -1,4 +1,4 @@
-package com.sandbox.services.living.model.entity;
+package com.sandbox.services.living.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
