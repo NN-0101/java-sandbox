@@ -12,10 +12,6 @@ public enum ResponseCodeEnum {
 
     SUCCESS(0, "success"),
 
-    UNAUTHORIZED(401, "Unauthorized"),
-
-    FORBIDDEN(403,  "Forbidden"),
-
     SYSTEM_ERROR(999999, "系统异常"),
 
     INFRASTRUCTURE_ERROR(100001, "基础服务异常，请联系管理员"),
