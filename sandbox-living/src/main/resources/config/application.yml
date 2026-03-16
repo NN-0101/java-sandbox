@@ -19,3 +19,16 @@ spring:
   application:
     name: sandbox-living
 
+netty:
+  device:
+    port: 9001
+    boss-threads: 1
+    worker-threads: 4
+    path: /device/ws
+    timeout: 60  # 设备超时时间较短
+  user:
+    port: 9002
+    boss-threads: 2
+    worker-threads: 8
+    path: /user/ws
+    timeout: 120 # 用户超时时间较长
