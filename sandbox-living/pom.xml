@@ -55,6 +55,12 @@
         </dependency>
         <!-- Spring Security End -->
 
+        <!-- Netty Begin-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+        <!-- Netty End-->
     </dependencies>
 
     <build>
