@@ -7,8 +7,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @description: 保存用户连接信息到本地
- * @author: xp
- * @create: 2025/5/1
+ * @author: 0101
+ * @create: 2026/3/16
  */
 public class ChannelGroup {
 
