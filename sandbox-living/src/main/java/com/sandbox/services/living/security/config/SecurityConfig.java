@@ -1,4 +1,4 @@
-package com.sandbox.services.living.config;
+package com.sandbox.services.living.security.config;
 
 import com.sandbox.services.living.security.filter.CustomAuthenticationFilter;
 import com.sandbox.services.living.security.handler.CustomAccessDeniedHandler;

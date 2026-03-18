@@ -1,4 +1,4 @@
-package com.sandbox.services.living.config.dao;
+package com.sandbox.services.living.mapper.config;
 
 import com.google.common.collect.Lists;
 import com.sandbox.services.db.mysql.config.DataSourceConfig;

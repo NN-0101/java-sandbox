@@ -10,8 +10,7 @@ import lombok.Getter;
 @Getter
 public enum LivingResponseCodeEnum {
 
-    UNAUTHORIZED(401, "Unauthorized"),
-    FORBIDDEN(403,  "Forbidden"),
+    AI_CONVERSATION_NOT_EXITS(10000, "会话不存在");
 
     ;
 
