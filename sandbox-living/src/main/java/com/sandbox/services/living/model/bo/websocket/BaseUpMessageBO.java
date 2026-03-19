@@ -8,15 +8,18 @@ import lombok.Data;
  *
  * <p>该类是所有上行消息的抽象基类，定义了上行消息的基础结构。
  * 所有从设备或客户端发送到平台的消息都应继承此类，并通过 {@link #messageType} 字段
- * 标识具体的消息类型，实现消息的多态处理和路由分发。</p>
+ * 标识具体的消息类型，通过 {@link #version} 字段标识协议版本，
+ * 实现消息的多态处理、路由分发和协议兼容性管理。</p>
  *
  * <p><b>核心职责：</b>
  * <ul>
  *   <li><b>类型标识</b>：提供消息类型字段 {@link #messageType}，用于消息路由和分发，
  *       子类可根据具体业务定义对应的类型枚举（如 {@link DeviceUpMessageTypeEnum}）</li>
+ *   <li><b>协议版本管理</b>：通过 {@link #version} 字段标识消息协议版本，为未来的协议升级
+ *       提供兼容性支持，平台可根据版本号选择不同的处理逻辑</li>
  *   <li><b>统一基类</b>：作为所有上行消息对象的父类，实现多态处理，管道中可以传递
  *       基类引用，实际类型由子类决定</li>
- *   <li><b>协议定义</b>：定义消息的基础结构，确保所有上行消息都包含类型信息，
+ *   <li><b>协议定义</b>：定义消息的基础结构，确保所有上行消息都包含类型信息和版本信息，
  *       为消息处理框架提供统一入口</li>
  * </ul>
  *
@@ -24,6 +27,8 @@ import lombok.Data;
  * <ul>
  *   <li><b>类型驱动</b>：通过 {@code messageType} 字段实现消息的路由，每个处理器根据 {@code messageType} 决定是否处理，
  *       形成清晰的责任链模式</li>
+ *   <li><b>版本兼容</b>：通过 {@code version} 字段支持协议升级，平台可根据版本号决定使用哪种解析逻辑，
+ *       同时支持多个版本的设备</li>
  *   <li><b>开闭原则</b>：新增消息类型时，只需扩展子类并添加对应的处理器，无需修改现有代码</li>
  *   <li><b>多态支持</b>：管道中可以传递 BaseUpMessageBO 引用，实际类型由子类决定，
  *       处理器可通过 instanceof 或类型字段进行判断</li>
@@ -31,7 +36,7 @@ import lombok.Data;
  *
  * <p><b>继承体系示例：</b>
  * <pre>
- * BaseUpMessageBO（基础上行消息，包含 messageType）
+ * BaseUpMessageBO（基础上行消息，包含 messageType、version）
  * ├── {@link com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO}
  * │   └── 设备上行消息，包含 macId 设备标识
  * └── UserUpMessageBO（用户上行消息，包含 userId、token 等）
@@ -49,6 +54,15 @@ import lombok.Data;
  * // 在消息处理器中获取类型
  * public void process(ChannelHandlerContext ctx, BaseUpMessageBO msg) {
  *     int messageType = msg.getMessageType();
+ *     int version = msg.getVersion();
+ *
+ *     // 根据版本号选择不同的处理逻辑
+ *     if (version == 1) {
+ *         // 处理 v1 版本的消息
+ *     } else if (version == 2) {
+ *         // 处理 v2 版本的消息
+ *     }
+ *
  *     if (messageType == DeviceUpMessageTypeEnum.CONN.getCode()) {
  *         DeviceUpMessageBO deviceMsg = (DeviceUpMessageBO) msg;
  *         String macId = deviceMsg.getMacId();
@@ -95,4 +109,21 @@ public class BaseUpMessageBO {
      * </ul>
      */
     private int messageType;
+
+    /**
+     * 协议版本号
+     *
+     * <p>用于标识消息所使用的协议版本，为未来的协议升级提供兼容性支持。
+     * 默认值为 1，表示初始版本。当协议发生不兼容变更时，可通过递增版本号
+     * 让平台根据版本来选择不同的解析和处理逻辑。
+     *
+     * <p>使用场景：
+     * <ul>
+     *   <li><b>协议升级</b>：新增字段或修改消息结构时，递增版本号</li>
+     *   <li><b>兼容性处理</b>：平台可根据版本号决定使用哪种解析逻辑，
+     *       同时支持多个版本的设备</li>
+     *   <li><b>灰度发布</b>：可同时支持多个版本的消息格式，逐步迁移设备</li>
+     * </ul>
+     */
+    private int version = 1;
 }
