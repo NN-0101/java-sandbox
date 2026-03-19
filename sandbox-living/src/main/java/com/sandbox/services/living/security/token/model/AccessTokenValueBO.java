@@ -1,4 +1,4 @@
-package com.sandbox.services.living.model.bo.token;
+package com.sandbox.services.living.security.token.model;
 
 import lombok.Data;
 

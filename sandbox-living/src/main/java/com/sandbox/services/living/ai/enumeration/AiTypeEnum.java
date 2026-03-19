@@ -1,4 +1,4 @@
-package com.sandbox.services.living.enumeration.ai;
+package com.sandbox.services.living.ai.enumeration;
 
 import lombok.Getter;
 

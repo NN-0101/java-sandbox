@@ -1,8 +1,8 @@
-package com.sandbox.services.living.model.bo.websocket.device;
+package com.sandbox.services.living.netty.websocket.model.device;
 
-import com.sandbox.services.living.enumeration.websocket.PlatformDownDeviceMessageTypeEnum;
-import com.sandbox.services.living.enumeration.websocket.PlatformDownMessageContentTypeEnum;
-import com.sandbox.services.living.model.bo.websocket.BaseDownMessageBO;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownDeviceMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownMessageContentTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.BaseDownMessageBO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

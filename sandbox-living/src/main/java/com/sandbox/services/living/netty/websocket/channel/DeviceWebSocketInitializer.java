@@ -1,6 +1,6 @@
-package com.sandbox.services.living.netty.websocket;
+package com.sandbox.services.living.netty.websocket.channel;
 
-import com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO;
+import com.sandbox.services.living.netty.websocket.model.device.DeviceUpMessageBO;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceConnHandler;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceDefaultHandler;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceFrameHandler;

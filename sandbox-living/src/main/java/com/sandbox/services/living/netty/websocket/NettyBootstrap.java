@@ -1,5 +1,7 @@
 package com.sandbox.services.living.netty.websocket;
 
+import com.sandbox.services.living.netty.websocket.channel.DeviceWebSocketInitializer;
+import com.sandbox.services.living.netty.websocket.channel.UserWebSocketInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

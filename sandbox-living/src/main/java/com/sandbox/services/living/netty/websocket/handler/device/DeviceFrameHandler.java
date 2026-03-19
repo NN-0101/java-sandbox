@@ -1,10 +1,10 @@
 package com.sandbox.services.living.netty.websocket.handler.device;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum;
-import com.sandbox.services.living.enumeration.websocket.PlatformDownDeviceMessageTypeEnum;
-import com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO;
-import com.sandbox.services.living.netty.websocket.channel.DeviceChannelGroup;
+import com.sandbox.services.living.netty.websocket.enumeration.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownDeviceMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.device.DeviceUpMessageBO;
+import com.sandbox.services.living.netty.websocket.channel.group.DeviceChannelGroup;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;

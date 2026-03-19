@@ -1,6 +1,6 @@
 package com.sandbox.services.living.service.ai;
 
-import com.sandbox.services.living.model.bo.ai.ChatMessageBO;
+import com.sandbox.services.living.ai.model.ChatMessageBO;
 import reactor.core.publisher.Flux;
 
 /**

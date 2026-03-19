@@ -1,8 +1,9 @@
 package com.sandbox.services.living.netty.websocket.handler;
 
-import com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum;
-import com.sandbox.services.living.enumeration.websocket.PlatformDownDeviceMessageTypeEnum;
-import com.sandbox.services.living.model.bo.websocket.BaseUpMessageBO;
+import com.sandbox.services.living.netty.websocket.enumeration.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownDeviceMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.BaseUpMessageBO;
+import com.sandbox.services.living.netty.websocket.model.device.DeviceUpMessageBO;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -45,7 +46,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * <p><b>泛型参数说明：</b>
  * <ul>
  *   <li><b>T extends {@link BaseUpMessageBO}</b>：消息类型，必须继承自 BaseUpMessageBO</li>
- *   <li>这样设计可以支持不同类型的消息（如 {@link com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO}、
+ *   <li>这样设计可以支持不同类型的消息（如 {@link DeviceUpMessageBO}、
  *       {@code UserUpMessageBO} 等）</li>
  *   <li>子类在继承时需要指定具体的消息类型，如：{@code BaseBusinessHandler<DeviceUpMessageBO>}</li>
  * </ul>

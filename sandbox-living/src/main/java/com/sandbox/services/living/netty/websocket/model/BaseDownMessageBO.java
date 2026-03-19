@@ -1,7 +1,8 @@
-package com.sandbox.services.living.model.bo.websocket;
+package com.sandbox.services.living.netty.websocket.model;
 
-import com.sandbox.services.living.enumeration.websocket.PlatformDownDeviceMessageTypeEnum;
-import com.sandbox.services.living.enumeration.websocket.PlatformDownMessageContentTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownDeviceMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownMessageContentTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.device.PlatformDownDeviceMessageBO;
 import lombok.Data;
 
 /**
@@ -35,7 +36,7 @@ import lombok.Data;
  * <p><b>继承体系示例：</b>
  * <pre>
  * BaseDownMessageBO（基础下行消息，包含 messageType、contentType、messageTime、content、version）
- * ├── {@link com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO}
+ * ├── {@link PlatformDownDeviceMessageBO}
  * │   └── 设备下行消息，可扩展设备特有字段
  * └── UserDownMessageBO（用户下行消息，可扩展用户特有字段）
  *     └── 后续可根据需要扩展更多业务类型
@@ -93,7 +94,7 @@ import lombok.Data;
  * @author 0101
  * @see PlatformDownDeviceMessageTypeEnum
  * @see PlatformDownMessageContentTypeEnum
- * @see com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO
+ * @see PlatformDownDeviceMessageBO
  * @since 2026-03-19
  */
 @Data

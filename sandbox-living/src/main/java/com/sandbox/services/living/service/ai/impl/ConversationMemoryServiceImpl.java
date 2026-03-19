@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sandbox.services.living.mapper.custom.ConversationMemoryRepository;
 import com.sandbox.services.living.entity.ConversationMemoryDO;
-import com.sandbox.services.living.model.bo.ai.ChatMemoryBO;
+import com.sandbox.services.living.ai.model.ChatMemoryBO;
 import com.sandbox.services.living.service.ai.ConversationMemoryService;
 import com.sandbox.services.living.service.ai.UserConversationService;
 import lombok.extern.slf4j.Slf4j;

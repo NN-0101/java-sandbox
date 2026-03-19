@@ -3,7 +3,7 @@ package com.sandbox.services.living.ai.config;
 import com.sandbox.services.living.ai.annotations.AiChatMessageService;
 import com.sandbox.services.living.ai.chat.BaseChatMessage;
 import com.sandbox.services.living.ai.memory.DBChatMemory;
-import com.sandbox.services.living.enumeration.ai.AiTypeEnum;
+import com.sandbox.services.living.ai.enumeration.AiTypeEnum;
 import com.sandbox.services.living.service.ai.ConversationMemoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;

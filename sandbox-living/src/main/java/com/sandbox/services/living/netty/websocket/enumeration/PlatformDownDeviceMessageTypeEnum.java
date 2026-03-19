@@ -1,6 +1,6 @@
-package com.sandbox.services.living.enumeration.websocket;
+package com.sandbox.services.living.netty.websocket.enumeration;
 
-import com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO;
+import com.sandbox.services.living.netty.websocket.model.device.PlatformDownDeviceMessageBO;
 import lombok.Getter;
 
 /**

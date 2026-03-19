@@ -2,7 +2,7 @@ package com.sandbox.services.living.service.ai;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sandbox.services.living.entity.UserConversationDO;
-import com.sandbox.services.living.model.bo.ai.UserConversationBO;
+import com.sandbox.services.living.ai.model.UserConversationBO;
 
 import java.util.List;
 

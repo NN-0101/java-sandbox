@@ -1,6 +1,7 @@
-package com.sandbox.services.living.model.bo.websocket;
+package com.sandbox.services.living.netty.websocket.model;
 
-import com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.device.DeviceUpMessageBO;
 import lombok.Data;
 
 /**
@@ -37,7 +38,7 @@ import lombok.Data;
  * <p><b>继承体系示例：</b>
  * <pre>
  * BaseUpMessageBO（基础上行消息，包含 messageType、version）
- * ├── {@link com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO}
+ * ├── {@link DeviceUpMessageBO}
  * │   └── 设备上行消息，包含 macId 设备标识
  * └── UserUpMessageBO（用户上行消息，包含 userId、token 等）
  *     └── 后续可根据需要扩展更多业务类型
@@ -72,8 +73,8 @@ import lombok.Data;
  * </pre>
  *
  * @author 0101
- * @see com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum
- * @see com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO
+ * @see DeviceUpMessageTypeEnum
+ * @see DeviceUpMessageBO
  * @see com.sandbox.services.living.netty.websocket.handler.BaseBusinessHandler
  * @since 2026-03-16
  */

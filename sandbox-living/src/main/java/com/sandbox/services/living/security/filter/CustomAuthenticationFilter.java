@@ -1,6 +1,6 @@
 package com.sandbox.services.living.security.filter;
 
-import com.sandbox.services.living.model.bo.token.AuthorizationTokenBO;
+import com.sandbox.services.living.security.token.model.AuthorizationTokenBO;
 import com.sandbox.services.living.security.user.CustomUserDetails;
 import com.sandbox.services.living.service.AuthorizationTokenService;
 import jakarta.servlet.FilterChain;

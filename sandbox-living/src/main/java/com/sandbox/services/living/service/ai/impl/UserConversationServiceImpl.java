@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sandbox.services.living.mapper.custom.UserConversationRepository;
 import com.sandbox.services.living.entity.UserConversationDO;
-import com.sandbox.services.living.model.bo.ai.UserConversationBO;
+import com.sandbox.services.living.ai.model.UserConversationBO;
 import com.sandbox.services.living.service.ai.UserConversationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

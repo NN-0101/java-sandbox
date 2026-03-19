@@ -1,5 +1,7 @@
-package com.sandbox.services.living.enumeration.websocket;
+package com.sandbox.services.living.netty.websocket.enumeration;
 
+import com.sandbox.services.living.netty.websocket.model.BaseDownMessageBO;
+import com.sandbox.services.living.netty.websocket.model.device.PlatformDownDeviceMessageBO;
 import lombok.Getter;
 
 /**
@@ -32,8 +34,8 @@ import lombok.Getter;
  * </pre>
  *
  * @author 0101
- * @see com.sandbox.services.living.model.bo.websocket.BaseDownMessageBO
- * @see com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO
+ * @see BaseDownMessageBO
+ * @see PlatformDownDeviceMessageBO
  * @since 2026-03-19
  */
 @Getter

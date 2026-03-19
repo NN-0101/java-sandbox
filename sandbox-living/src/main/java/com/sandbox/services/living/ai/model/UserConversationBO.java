@@ -1,4 +1,4 @@
-package com.sandbox.services.living.model.bo.ai;
+package com.sandbox.services.living.ai.model;
 
 import lombok.Data;
 

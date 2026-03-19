@@ -1,8 +1,8 @@
 package com.sandbox.services.living.netty.websocket.handler.device;
 
-import com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum;
-import com.sandbox.services.living.enumeration.websocket.PlatformDownDeviceMessageTypeEnum;
-import com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO;
+import com.sandbox.services.living.netty.websocket.enumeration.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.enumeration.PlatformDownDeviceMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.device.DeviceUpMessageBO;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;

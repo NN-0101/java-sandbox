@@ -1,5 +1,6 @@
 package com.sandbox.services.living.config;
 
+import com.sandbox.services.living.ai.enumeration.AiTypeEnum;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +36,7 @@ public class BusinessConfig {
     /**
      * 提示词映射
      *
-     * <p>key 为 {@link com.sandbox.services.living.enumeration.ai.AiTypeEnum} 的枚举值，
+     * <p>key 为 {@link AiTypeEnum} 的枚举值，
      * value 为对应的系统提示词。
      */
     private Map<String, String> prompts;

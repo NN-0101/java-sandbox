@@ -2,7 +2,7 @@ package com.sandbox.services.living.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sandbox.services.living.entity.AuthorizationTokenDO;
-import com.sandbox.services.living.model.bo.token.AuthorizationTokenBO;
+import com.sandbox.services.living.security.token.model.AuthorizationTokenBO;
 
 /**
  * @description: 授权token表(AuthorizationToken)表服务接口

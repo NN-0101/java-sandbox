@@ -1,7 +1,8 @@
-package com.sandbox.services.living.model.bo.websocket.device;
+package com.sandbox.services.living.netty.websocket.model.device;
 
-import com.sandbox.services.living.enumeration.websocket.DeviceUpMessageTypeEnum;
-import com.sandbox.services.living.model.bo.websocket.BaseUpMessageBO;
+import com.sandbox.services.living.netty.websocket.enumeration.DeviceUpMessageTypeEnum;
+import com.sandbox.services.living.netty.websocket.model.BaseUpMessageBO;
+import com.sandbox.services.living.netty.websocket.channel.group.DeviceChannelGroup;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -89,7 +90,7 @@ import lombok.EqualsAndHashCode;
  *       子类处理器</li>
  *   <li>各处理器根据 type 字段（即 {@link DeviceUpMessageTypeEnum} 枚举值）
  *       决定是否处理该消息</li>
- *   <li>处理完成后，可通过 {@link com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO}
+ *   <li>处理完成后，可通过 {@link PlatformDownDeviceMessageBO}
  *       构造下行响应返回给设备</li>
  * </ol>
  *
@@ -98,7 +99,7 @@ import lombok.EqualsAndHashCode;
  * @see DeviceUpMessageTypeEnum
  * @see com.sandbox.services.living.netty.websocket.handler.device.DeviceFrameHandler
  * @see com.sandbox.services.living.netty.websocket.handler.BaseBusinessHandler
- * @see com.sandbox.services.living.model.bo.websocket.device.PlatformDownDeviceMessageBO
+ * @see PlatformDownDeviceMessageBO
  * @since 2026-03-16
  */
 @Data
@@ -117,7 +118,7 @@ public class DeviceUpMessageBO extends BaseUpMessageBO {
      * <ul>
      *   <li><b>连接认证</b>：验证设备是否在白名单中，是否有权限接入</li>
      *   <li><b>消息路由</b>：确定消息属于哪个设备，用于数据存储和业务处理</li>
-     *   <li><b>消息推送</b>：平台下发消息时，根据 macId 从 {@link com.sandbox.services.living.netty.websocket.channel.DeviceChannelGroup}
+     *   <li><b>消息推送</b>：平台下发消息时，根据 macId 从 {@link DeviceChannelGroup}
      *       获取对应的 Channel 进行推送</li>
      *   <li><b>资源清理</b>：设备断开连接时，根据 macId 清理相关资源</li>
      * </ul>

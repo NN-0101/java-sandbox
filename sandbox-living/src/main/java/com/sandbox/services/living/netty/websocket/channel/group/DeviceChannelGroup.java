@@ -1,4 +1,4 @@
-package com.sandbox.services.living.netty.websocket.channel;
+package com.sandbox.services.living.netty.websocket.channel.group;
 
 import io.netty.channel.Channel;
 

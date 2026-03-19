@@ -1,5 +1,6 @@
-package com.sandbox.services.living.netty.websocket;
+package com.sandbox.services.living.netty.websocket.channel;
 
+import com.sandbox.services.living.netty.websocket.NettyBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;

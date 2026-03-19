@@ -1,7 +1,7 @@
 package com.sandbox.services.living.controller.ai;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.sandbox.services.living.model.bo.ai.ChatMessageBO;
+import com.sandbox.services.living.ai.model.ChatMessageBO;
 import com.sandbox.services.living.model.dto.ai.ChatMessageRequest;
 import com.sandbox.services.living.service.ai.ChatMessageService;
 import jakarta.validation.Valid;

@@ -1,6 +1,6 @@
 package com.sandbox.services.living.ai.annotations;
 
-import com.sandbox.services.living.enumeration.ai.AiTypeEnum;
+import com.sandbox.services.living.ai.enumeration.AiTypeEnum;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.lang.annotation.ElementType;
