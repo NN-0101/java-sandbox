@@ -1,5 +1,6 @@
 package com.sandbox.services.living.netty.websocket;
 
+import com.sandbox.services.living.model.bo.websocket.device.DeviceUpMessageBO;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceConnHandler;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceDefaultHandler;
 import com.sandbox.services.living.netty.websocket.handler.device.DeviceFrameHandler;
@@ -54,7 +55,7 @@ import java.util.concurrent.TimeUnit;
  *   </li>
  *   <li><b>协议转换：</b>将 WebSocket 帧转换为业务对象
  *     <ul>
- *       <li>{@link DeviceFrameHandler} - WebSocket帧 → {@link com.sandbox.services.living.model.bo.websocket.device.DeviceMessageBO}</li>
+ *       <li>{@link DeviceFrameHandler} - WebSocket帧 → {@link DeviceUpMessageBO}</li>
  *     </ul>
  *   </li>
  *   <li><b>业务处理链：</b>处理具体的业务逻辑
@@ -77,7 +78,7 @@ import java.util.concurrent.TimeUnit;
  *       便于维护和测试</li>
  *   <li><b>可扩展性：</b>新增业务处理器只需在管道相应位置添加，无需修改现有代码，
  *       符合开闭原则</li>
- *   <li><b>协议透明：</b>业务处理器只需处理业务对象 {@link com.sandbox.services.living.model.bo.websocket.device.DeviceMessageBO}，
+ *   <li><b>协议透明：</b>业务处理器只需处理业务对象 {@link DeviceUpMessageBO}，
  *       无需关心 WebSocket 协议细节，降低业务开发复杂度</li>
  *   <li><b>防御性编程：</b>配置超时检测和兜底处理器，防止资源泄露和消息丢失</li>
  *   <li><b>标准化处理流程：</b>按照“协议层 → 连接管理 → 协议转换 → 业务处理 → 兜底”的
